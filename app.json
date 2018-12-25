@@ -1,8 +1,0 @@
-{
-  "name": "pdftotext",
-  "description": "Simple web service for Xpdf's pdftotext command",
-  "repository": "https://github.com/josh/pdftotext",
-  "env": {
-    "BUILDPACK_URL": "https://github.com/josh/heroku-buildpack-cgi"
-  }
-}

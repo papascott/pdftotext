@@ -13,7 +13,3 @@ $ curl -T receipt.pdf http://localhost:8080/cgi-bin/pdftotext
 
     Thank You!
 ```
-
-### Deployment
-
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
