@@ -60,11 +60,11 @@ do
 done
 
 printf "Status: 200 OK\r\n"
-printf "Content-Type: text/plain\r\n"
+printf "Content-Type: text/plain; charset=UTF-8\r\n"
 print_cors_headers
 printf "\r\n"
 
 tmp="$(mktemp)"
 head -c "$CONTENT_LENGTH" > "$tmp"
-pdftotext "${FLAGS[@]}" "$tmp" "-"
+pdftotext -enc "UTF-8" "${FLAGS[@]}" "$tmp" "-"
 rm -f "$tmp"
