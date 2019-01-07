@@ -1,0 +1,16 @@
+version: "3"
+services: 
+  sut:
+    build:
+      context: . 
+      dockerfile: Dockerfile.test
+    environment: 
+      - "SERVICE_HOST=http://web:80"
+    depends_on:
+      - "web"
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"

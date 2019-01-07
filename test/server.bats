@@ -1,6 +1,10 @@
 #!/usr/bin/env bats
 
-url="http://localhost:8080/cgi-bin/pdftotext"
+if [[ -z "${SERVICE_HOST}" ]]; then
+  SERVICE_HOST="http://localhost:8080"
+fi
+
+url="${SERVICE_HOST}/cgi-bin/pdftotext"
 pdf="$BATS_TEST_DIRNAME/fixtures/fw4.pdf"
 txt="$BATS_TEST_DIRNAME/fixtures/fw4.txt"
 

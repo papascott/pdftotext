@@ -1,0 +1,7 @@
+FROM alpine:3.8
+
+RUN apk update && apk add bats curl
+
+COPY ./test ./test
+
+CMD bats test/server.bats

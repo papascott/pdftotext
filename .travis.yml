@@ -4,12 +4,7 @@ services:
   - docker
 
 before_install:
-  - sudo add-apt-repository ppa:duggan/bats --yes
-  - sudo apt-get update -qq
-  - sudo apt-get install -qq bats
-  - docker build -t pdftotext .
-  - docker run -d -p 8080:80 pdftotext
-  - docker ps -a
+  - docker-compose -f docker-compose.test.yml build
 
 script:
-  - bats test/server.bats
+  - docker-compose -f docker-compose.test.yml run sut
