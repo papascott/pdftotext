@@ -1,6 +1,6 @@
 FROM httpd:2.4-alpine
 
-RUN apk update && apk add xpdf
+RUN apk update && apk add poppler-utils
 
 RUN sed -i 's|LoadModule mpm_event_module|#LoadModule mpm_event_module|' /usr/local/apache2/conf/httpd.conf \
     && sed -i 's|#LoadModule mpm_prefork_module|LoadModule mpm_prefork_module|' /usr/local/apache2/conf/httpd.conf \
